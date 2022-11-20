@@ -85,7 +85,6 @@ public abstract class ImageStatusDisplayItem extends StatusDisplayItem{
 		@Override
 		public void clearImage(int index){
 			crossfadeDrawable.setCrossfadeAlpha(1f);
-			crossfadeDrawable.setImageDrawable(null);
 			didClear=true;
 		}
 

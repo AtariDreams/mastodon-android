@@ -172,11 +172,12 @@ public class SearchFragment extends BaseStatusListFragment<SearchResult>{
 			super.updateList();
 			return;
 		}
+		imgLoader.deactivate();
 		UiUtils.updateList(prevDisplayItems, displayItems, list, adapter, (i1, i2)->i1.parentID.equals(i2.parentID) && i1.index==i2.index && i1.getType()==i2.getType());
 		boolean recent=isInRecentMode();
 		if(recent!=headerAdapter.isVisible())
 			headerAdapter.setVisible(recent);
-		imgLoader.forceUpdateImages();
+		imgLoader.activate();
 		prevDisplayItems=null;
 	}
 
